@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HienThiSoNguyenToDauTien print</title>
+</head>
+<body>
+
+<br>
+<br>
+nhập m <input type="number" id="m" min="0" style="background-color: yellow; width: 200px;">
+<br>
+<br>
+<button onclick="print()" style="background-color: red; width: 100px; margin-left: 100px">In</button>
+<p id="result"> Kết Quả: </p>
+<br>
+
+<script>
+
+    function print(){
+        document.getElementById('result').innerHTML= 'kết quả:';
+        let count =0;
+        let N=2;
+        let number =+ document.getElementById('m').value;
+        while(count<number){
+            check = false;
+            for (let i=2, i<N; i++){
+                console.log("i-------------",i)
+                if (N%i==0){
+                    console.log("N============",N)
+                    check= true
+                }
+            }
+            if(!check){
+                document.getElementById('result').innerHTML +=(N + ' , ');
+                count++
+            }
+            console.log("count============", count)
+            N++;
+        }
+    }
+</script>
+
+
+
+
+</body>
+</html>
